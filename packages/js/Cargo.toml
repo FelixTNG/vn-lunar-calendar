@@ -1,0 +1,21 @@
+[package]
+name = "vn-lunar-js"
+version = { workspace = true }
+edition = { workspace = true }
+rust-version = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+description = "JavaScript/TypeScript bindings for vn-lunar-core via WebAssembly"
+authors = { workspace = true }
+categories = ["wasm", "date-and-time"]
+keywords = ["lunar", "calendar", "vietnam", "am-lich", "wasm"]
+readme = "../../README.md"
+
+[lib]
+name = "vn_lunar_js"
+crate-type = ["cdylib"]
+
+[dependencies]
+vn-lunar-core = { path = "../../crates/vn-lunar-core", default-features = false }
+wasm-bindgen = { workspace = true }
+js-sys = { workspace = true }

@@ -1,0 +1,45 @@
+{
+  "name": "vn-lunar-calendar",
+  "version": "0.1.0",
+  "description": "Vietnamese Lunar Calendar for JavaScript/TypeScript (pure JS, no WASM required)",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p ts/tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build:wasm": "wasm-pack build --target bundler --out-dir pkg",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "lunar",
+    "calendar",
+    "vietnam",
+    "am-lich",
+    "lich-am"
+  ],
+  "author": "Felix <felix.tunguyen@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FelixTNG/vn-lunar-calendar"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=26"
+  }
+}

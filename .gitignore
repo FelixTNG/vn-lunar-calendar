@@ -1,0 +1,37 @@
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+
+# Python
+packages/python/__pycache__/
+packages/python/*.egg-info/
+packages/python/build/
+packages/python/dist/
+packages/python/*.whl
+
+# JavaScript/WASM
+packages/js/pkg/
+packages/js/node_modules/
+packages/js/dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local installers
+rustup-init.exe
+
+# Test artifacts
+test-results/
+coverage/
+
+# Local config
+.env
+.env.local
