@@ -34,7 +34,7 @@ fn write_err(out_err: *mut i32, code: i32) {
 /// Convert Gregorian (Vietnam civil) to lunar.
 ///
 /// Returns 0 on success. `out` must be non-null. `out_err` may be null.
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn vn_lunar_solar_to_lunar(
     year: i32,
     month: u8,
@@ -70,7 +70,7 @@ pub extern "C" fn vn_lunar_solar_to_lunar(
 /// Convert lunar to Gregorian (Vietnam civil).
 ///
 /// `leap` is non-zero for a leap month. Returns 0 on success.
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn vn_lunar_lunar_to_solar(
     year: i32,
     month: u8,
@@ -105,7 +105,7 @@ pub extern "C" fn vn_lunar_lunar_to_solar(
 }
 
 /// Leap month of `lunar_year`, or 0 if none. Negative values are error codes.
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn vn_lunar_leap_month(lunar_year: i32) -> i32 {
     if lunar_year < MIN_YEAR || lunar_year > MAX_YEAR {
         return LunarError::YearOutOfRange(lunar_year).code();
@@ -114,7 +114,7 @@ pub extern "C" fn vn_lunar_leap_month(lunar_year: i32) -> i32 {
 }
 
 /// Library version string (UTF-8, NUL-terminated, static).
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn vn_lunar_version() -> *const core::ffi::c_char {
     static VERSION: &str = concat!(env!("CARGO_PKG_VERSION"), "\0");
     VERSION.as_ptr().cast()
