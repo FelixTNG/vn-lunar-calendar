@@ -775,9 +775,12 @@ mod tests {
     #[test]
     fn jieqi_lap_xuan_2025() {
         let cal = LunarCalendar::new();
-        let jieqi = cal.get_jieqi(2025, 2, 4).unwrap();
+        let jieqi = cal.get_jieqi(2025, 2, 3).unwrap();
         assert_eq!(jieqi.name, JieQiName::LapXuan);
-        assert_eq!(jieqi.solar_date, SolarDate::new(2025, 2, 4));
+        assert_eq!(jieqi.solar_date, SolarDate::new(2025, 2, 3));
+        let next_day = cal.get_jieqi(2025, 2, 4).unwrap();
+        assert_eq!(next_day.name, JieQiName::LapXuan);
+        assert_eq!(next_day.solar_date, SolarDate::new(2025, 2, 3));
     }
 
     #[test]

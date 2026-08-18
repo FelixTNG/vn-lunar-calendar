@@ -22,4 +22,11 @@ describe("LunarCalendar", () => {
     expect(cal.leapMonth(2025)).toBe(6);
     expect(cal.leapMonth(2028)).toBe(5);
   });
+
+  it("places Lập Xuân 2025 on 3 February", () => {
+    const jieqi = cal.getJieqi(2025, 2, 3);
+    expect(jieqi.name).toBe("Lập Xuân");
+    expect(jieqi.solarDate).toEqual({ year: 2025, month: 2, day: 3 });
+    expect(cal.getJieqi(2025, 2, 4).solarDate).toEqual({ year: 2025, month: 2, day: 3 });
+  });
 });
