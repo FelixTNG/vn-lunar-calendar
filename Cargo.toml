@@ -1,10 +1,6 @@
 [workspace]
 resolver = "3"
-members = [
-    "crates/vn-lunar-core",
-    "packages/python",
-    "packages/js",
-]
+members = ["crates/vn-lunar-core"]
 default-members = ["crates/vn-lunar-core"]
 
 [workspace.package]
@@ -18,11 +14,6 @@ authors = ["Felix <felix.tunguyen@gmail.com>"]
 categories = ["date-and-time", "wasm"]
 keywords = ["lunar", "calendar", "vietnam", "am-lich", "lich-am"]
 readme = "README.md"
-
-[workspace.dependencies]
-serde = { version = "1.0", features = ["derive"] }
-wasm-bindgen = "0.2"
-js-sys = "0.3"
 
 [profile.release]
 lto = true

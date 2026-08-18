@@ -1,12 +1,12 @@
 [package]
 name = "vn-lunar-python"
-version = { workspace = true }
-edition = { workspace = true }
-rust-version = { workspace = true }
-license = { workspace = true }
-repository = { workspace = true }
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.97"
+license = "MIT"
+repository = "https://github.com/FelixTNG/vn-lunar-calendar"
 description = "Python bindings for vn-lunar-core"
-authors = { workspace = true }
+authors = ["Felix <felix.tunguyen@gmail.com>"]
 categories = ["date-and-time", "external-ffi-bindings"]
 keywords = ["lunar", "calendar", "vietnam", "am-lich", "lich-am"]
 readme = "../../README.md"

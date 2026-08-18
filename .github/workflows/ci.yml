@@ -17,9 +17,13 @@ jobs:
       - uses: actions/checkout@v5
       - uses: dtolnay/rust-toolchain@1.97.1
       - name: Toolchain
-        run: rustc -vV
+        run: |
+          command -v rustc
+          command -v cargo
+          rustc -vV
+          cargo -vV
       - name: Test
-        run: cargo test -p vn-lunar-core --all-features
+        run: rustup run 1.97.1 cargo test -p vn-lunar-core --all-features --offline --locked --lib
 
   javascript:
     name: JavaScript
