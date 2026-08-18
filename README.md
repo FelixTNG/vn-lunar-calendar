@@ -2,6 +2,8 @@
 
 **Vietnamese Lunar Calendar Library** — Core in Rust (UTC+7). Other languages call the same conversions through a C ABI, or via the Python / JavaScript packages.
 
+English | [Tiếng Việt](README.vi.md)
+
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Rust](https://img.shields.io/badge/rust-1.97.1-orange.svg)
 ![Python](https://img.shields.io/badge/python-3.15-blue.svg)
