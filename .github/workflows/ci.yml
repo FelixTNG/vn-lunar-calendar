@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@1.97.1
+      - name: Toolchain
+        run: rustc -vV
       - name: Test
         run: cargo test -p vn-lunar-core --all-features
 
